@@ -1,0 +1,59 @@
+{
+  "contractAddress": "0x6f4a3d1513ff8777e0cfd564ad4c39d92d18da6a",
+  "network": "ARC-TESTNET",
+  "deployerWalletId": "3c2464b2-8369-52e2-a782-800bbeca5396",
+  "contract_code_path": "/home/user/app/contracts/SeedApp.sol",
+  "contract_compiled_code_path": "/home/user/app/contracts/out/SeedApp.sol/SeedApp.json",
+  "contract_network_and_links": {
+    "Arc Testnet": "https://explorer.testnet.arc.io/address/0x6f4a3d1513ff8777e0cfd564ad4c39d92d18da6a"
+  },
+  "contract_deployments": [
+    {
+      "chain": "Arc Testnet",
+      "address": "0x6f4a3d1513ff8777e0cfd564ad4c39d92d18da6a",
+      "explorerUrl": "https://explorer.testnet.arc.io/address/0x6f4a3d1513ff8777e0cfd564ad4c39d92d18da6a",
+      "txHash": "0xdc4e0013b5b05833e8b63e25d4391ebe5729d231e8d490aba04b98751edcd91f",
+      "deployedAt": "2026-10-25T07:06:10.464Z"
+    },
+    {
+      "chain": "Arc Testnet",
+      "address": "0x9e2fd7a7b389c52ed005a62d8afd249ebb24bbe0",
+      "explorerUrl": "https://explorer.testnet.arc.io/address/0x9e2fd7a7b389c52ed005a62d8afd249ebb24bbe0",
+      "txHash": "0xa7203944be7ea2bc7168fd4a7544ad601bd2c4308e4b9c817467f0a0ca12b8c3",
+      "deployedAt": "2026-10-25T07:06:03.637Z"
+    },
+    {
+      "chain": "Arc Testnet",
+      "address": "0x04b7c7ad309aa2e0c30f9cf4f7c21b757888df69",
+      "explorerUrl": "https://explorer.testnet.arc.io/address/0x04b7c7ad309aa2e0c30f9cf4f7c21b757888df69",
+      "txHash": "0xda6e32c796cfd5485ab8eec544c1a0fc66e0f5c1337c31ee00eec5502f305727",
+      "deployedAt": "2026-10-25T07:05:56.851Z"
+    }
+  ],
+  "abi": [
+    {
+      "type": "constructor",
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "string",
+          "internalType": "string"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "projectName",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "string",
+          "internalType": "string"
+        }
+      ],
+      "stateMutability": "view"
+    }
+  ]
+}

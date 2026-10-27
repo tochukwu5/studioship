@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------
+   StudioShip design tokens — brief section 14
+   Dark theme is default (developer-tool feel); light theme is opt-in.
+   ------------------------------------------------------------------------- */
+
+:root {
+  /* Dark theme (default) — brief exact values */
+  --bg:       #0B0F17;
+  --surface:  #121826;
+  --border:   #1F2937;
+  --text:     #E5E7EB;
+  --muted:    #9CA3AF;
+
+  /* Brand accent */
+  --accent:   #4F7CFF;
+  --accent-hover: #6b8fff;
+
+  /* Semantic */
+  --success:  #22C55E;
+  --warning:  #F59E0B;
+  --danger:   #EF4444;
+
+  /* Arc design system extensions */
+  --surface-strong: rgba(255,255,255,0.07);
+  --focus:    #4F7CFF;
+}
+
+[data-theme="light"] {
+  --bg:       #F8FAFC;
+  --surface:  #FFFFFF;
+  --border:   #E2E8F0;
+  --text:     #0F172A;
+  --muted:    #64748B;
+  --accent:   #4F7CFF;
+  --accent-hover: #3b6af0;
+  --success:  #16A34A;
+  --warning:  #D97706;
+  --danger:   #DC2626;
+  --surface-strong: rgba(0,0,0,0.04);
+  --focus:    #4F7CFF;
+}
+
+/* -------------------------------------------------------------------------
+   Base styles
+   ------------------------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------------------------------
+   Typography helpers
+   ------------------------------------------------------------------------- */
+
+.display {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', Menlo, monospace;
+}
+
+/* -------------------------------------------------------------------------
+   Focus ring (accessibility)
+   ------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip-to-content link (hidden until focused) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Ensure tap targets are at least 40×40px on touch devices */
+@media (pointer: coarse) {
+  button, [role="button"], a {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+/* Prevent horizontal scroll at all widths */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Overflow-safe mono/code blocks */
+pre, code, .mono {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+/* Wizard step cards: constrain to viewport */
+.wizard-card {
+  max-width: min(100vw - 32px, 600px);
+  margin-inline: auto;
+}
+
+/* Mobile: 16px side padding guarantee */
+@media (max-width: 400px) {
+  .page-padded {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Scrollbar (subtle)
+   ------------------------------------------------------------------------- */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* -------------------------------------------------------------------------
+   Toaster overrides
+   ------------------------------------------------------------------------- */
+
+[data-sonner-toaster] {
+  font-family: 'DM Sans', sans-serif !important;
+}
